@@ -34,7 +34,9 @@ RUN \
   # A - D
   altermime amavisd-new apt-transport-https arj binutils bzip2 bsd-mailx \
   ca-certificates cabextract clamav clamav-daemon cpio curl \
-  dbconfig-no-thanks dovecot-core dovecot-fts-xapian dovecot-imapd \
+  dbconfig-no-thanks dovecot-core \
+  # dovecot-fts-xapian \
+  dovecot-imapd \
   dovecot-ldap dovecot-lmtpd dovecot-managesieved dovecot-pop3d \
   dovecot-sieve dovecot-solr dumb-init \
   # E - O
