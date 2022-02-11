@@ -5,7 +5,8 @@ This is inspired by [Docker Mailserver](https://github.com/docker-mailserver/doc
 1. [Install the latest docker-compose](https://docs.docker.com/compose/install/)
 2. Edit `docker-compose.yml` to your liking
   * substitute `mail` (hostname) and `foo.com` (domainname) according to your FQDN
-3. Configure the mailserver container to your liking by editing mailserver.env ([Documentation](https://docker-mailserver.github.io/docker-mailserver/edge/config/environment/)), but keep in mind this .env file:
+3. If the FQDN is artificial, please do remember add domain name into /etc/hosts
+4. Configure the mailserver container to your liking by editing mailserver.env ([Documentation](https://docker-mailserver.github.io/docker-mailserver/edge/config/environment/)), but keep in mind this .env file:
   * [only basic VAR=VAL](https://docs.docker.com/compose/env-file/) is supported (do not quote your values!)
   * variable substitution is not supported (e.g. 🚫 OVERRIDE_HOSTNAME=$HOSTNAME.$DOMAINNAME 🚫)
 
