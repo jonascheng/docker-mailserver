@@ -1,5 +1,14 @@
 This is inspired by [Docker Mailserver](https://github.com/docker-mailserver/docker-mailserver), and amend to accomdate our requirements.
 
+# Which POSTFIX?
+
+Edit `docker-compose.yml` to your liking
+
+```yaml
+      args:
+        DEBIAN_VERSION: "11-slim" # postfix 3.5.6
+        # DEBIAN_VERSION: "10-slim" # postfix 3.4.14
+```
 # Create a docker-compose Environment
 
 1. [Install the latest docker-compose](https://docs.docker.com/compose/install/)
