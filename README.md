@@ -50,3 +50,12 @@ Make sure to mount the correct configuration directory.
 ```
 docker-compose up -d
 ```
+
+# Desktop Mail Client
+
+Any modern desktop mail client installed on the host should be able to connect to this Postfix server, in this example we will use [Mozilla Thunderbird](https://www.thunderbird.net/en-US/).
+
+1. Create an (or mutiple) email account which was created in POSTFIX mail server.
+2. Write an email to the account which was created in POSTFIX mail server.
+
+![](images/sample-mail.png)
