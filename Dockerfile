@@ -48,16 +48,16 @@ RUN \
   unrar-free unzip uuid whois xz-utils && \
   # Fail2Ban
   gpg --keyserver ${FAIL2BAN_GPG_PUBLIC_KEY_SERVER} \
-    --recv-keys ${FAIL2BAN_GPG_PUBLIC_KEY_ID} 2>&1 && \
+  --recv-keys ${FAIL2BAN_GPG_PUBLIC_KEY_ID} 2>&1 && \
   curl -Lkso fail2ban.deb ${FAIL2BAN_DEB_URL} && \
   curl -Lkso fail2ban.deb.asc ${FAIL2BAN_DEB_ASC_URL} && \
   FINGERPRINT="$(LANG=C gpg --verify \
   fail2ban.deb.asc fail2ban.deb 2>&1 \
-    | sed -n 's#Primary key fingerprint: \(.*\)#\1#p')" && \
+  | sed -n 's#Primary key fingerprint: \(.*\)#\1#p')" && \
   if [[ -z ${FINGERPRINT} ]]; then \
-    echo "ERROR: Invalid GPG signature!" >&2; exit 1; fi && \
+  echo "ERROR: Invalid GPG signature!" >&2; exit 1; fi && \
   if [[ ${FINGERPRINT} != "${FAIL2BAN_GPG_FINGERPRINT}" ]]; then \
-    echo "ERROR: Wrong GPG fingerprint!" >&2; exit 1; fi && \
+  echo "ERROR: Wrong GPG fingerprint!" >&2; exit 1; fi && \
   dpkg -i fail2ban.deb 2>&1 && \
   rm fail2ban.deb fail2ban.deb.asc && \
   # cleanup
