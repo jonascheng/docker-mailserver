@@ -7,8 +7,8 @@ services:
         DEBIAN_VERSION: "11-slim" # postfix 3.5.6
         # DEBIAN_VERSION: "10-slim" # postfix 3.4.14
         # DEBIAN_VERSION: "9-slim" # postfix 3.1.15 (not ready yet)
-    image: docker.io/mailserver/docker-mailserver:latest
-    # image: docker-mailserver
+    # image: docker.io/mailserver/docker-mailserver:latest
+    image: docker-mailserver
     container_name: mailserver
     hostname: mail
     domainname: foo.com
